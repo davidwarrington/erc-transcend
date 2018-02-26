@@ -8,10 +8,26 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
+  {%- comment -%}
+    The following liquid code constructs a string for importing fonts from Google fonts.
+    The configurable part of the Google Font URL follows this pattern:
+      - Font name, followed by a colon, followed by all chosen font weights, joined with commas
+        - Font name has spaces replaced with plus symbols
+        - Looks something like this: Roboto:400,700,700i
+          - Note that "700i" means, weight 700, italic variant
+        - If you only use the default font weight (400), the string just contains the font name
+      - A pipe (|) is used to separate font names
+
+    Sample string: Roboto:400, 500, 500i|Open+Sans
+  {%- endcomment -%}
+
   {% assign fonts_string = 'https://fonts.googleapis.com/css?family=' %}
   {% for font in resources.fonts %}
     {% assign name = font.name | replace: ' ', '+' %}
 
+    {% comment %}
+      Construct string for chosen font weights
+    {% endcomment %}
     {% assign weight_string = '' %}
     {% for weight in font.weights %}
       {% if forloop.first %}
@@ -25,6 +41,9 @@
       {% endunless %}
     {% endfor %}
     
+    {% comment %}
+      Append font name and weights to current font string
+    {% endcomment %}
     {% assign fonts_string = fonts_string | append: name | append: weight_string %}
 
     {% unless forloop.last %}
