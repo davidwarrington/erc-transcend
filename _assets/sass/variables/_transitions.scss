@@ -1,0 +1,5 @@
+$duration-medium: .3s;
+$duration-long: $duration-medium * (5 / 3);
+
+$transition-medium: #{$duration-medium} all ease-in-out;
+$transition-long: #{$duration-long} all ease-in-out;

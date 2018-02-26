@@ -1,0 +1,10 @@
+h2 {
+    &:after {
+        background: $primary;
+        content: '';
+        display: block;
+        height: 3px;
+        margin: 0 auto;
+        width: 200px;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid student-list">
+    <div class="row">
+        {% for student in site.students %}      
+        <div class="d-flex flex-column justify-content-center align-items-start align-items-md-center text-md-center student-list--person">
+            <span class="h2 student-name">{{ student.name }}</span>
+            <a href="{{ student.url | relative_url }}" class="student-link">
+                Learn 
+                <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
+                <span class="d-inline d-md-none">more</span>                
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container-fluid student-list">
+    <div class="row">
+        {% for student in site.students %}      
+        <div class="d-flex flex-column justify-content-center justify-content-md-end align-items-start align-items-md-center text-md-center student-list--person student-list--gradient pb-md-5">
+            <span class="h2 student-name">{{ student.name }}</span>
+            <a href="{{ student.url | relative_url }}" class="student-link">
+                Learn 
+                <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
+                <span class="d-inline d-md-none">more</span>                
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
