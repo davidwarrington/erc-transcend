@@ -1,11 +1,61 @@
 ---
 layout: default
 ---
-<article class="post">
+<article class="student-page container">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+  <header class="row student-header py-5">
+    <div class="col-12 text-center">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+    </div>
   </header>
+
+  <div class="row student-bio pb-5">
+    <div class="col-10 mx-auto">
+      <p>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, itaque ab aspernatur beatae quidem at debitis quae. Explicabo reprehenderit officiis aliquid nulla iste, perspiciatis, voluptates ex, ad laudantium culpa ea!</span>
+        <span>Ipsam cumque explicabo sed culpa praesentium labore doloribus, neque repellat. Ex voluptas soluta id voluptates illum. Nobis doloribus, error id et nesciunt odio corporis, consequuntur dolore quisquam, natus distinctio consectetur?</span>
+        <span>Fuga voluptatum quidem fugit nam ex? Eos iste possimus, ad iure asperiores maiores rerum? Iusto cupiditate architecto expedita, odio tempora laborum explicabo corporis velit non reprehenderit optio amet, culpa atque?</span>
+      </p>
+      <p>
+        <span>In, sunt consequuntur. Consequatur cupiditate sit nam soluta omnis quisquam quod rem reprehenderit quis earum? Aut natus et, sit optio est suscipit explicabo nam, fugit at aliquam, quidem repellendus. Corrupti?</span>
+        <span>Aperiam atque aspernatur provident, accusantium excepturi rerum, voluptates velit deserunt quasi reiciendis enim dignissimos veniam aut ullam nostrum voluptate in ipsum et sunt autem eveniet assumenda voluptatem earum? Accusantium, illum?</span>
+        <span>Maiores molestias impedit ex alias enim aspernatur perspiciatis praesentium exercitationem unde iure quasi, possimus expedita laudantium. Nam quasi modi saepe dicta nesciunt explicabo fugit dolorem itaque nostrum! Nulla, laboriosam earum.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="row pb-5">
+    <div class="col-12 text-center">
+      <span>
+        Follow {{ page.name | truncatewords: 1, '' }}:
+        <a href="#" class="text-dark">fb</a>
+        <a href="#" class="text-dark">tw</a>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    {% assign col_num = 1 %}
+    {% for item in (1..6) %}
+
+      {% unless col_num == 1 %}
+        {% assign col_size = 6 %}
+      {% else %}
+        {% assign col_size = 12 %}
+      {% endunless %}
+
+      <div class="col-{{ col_size }} text-center pb-4">
+        <img src="#" alt="#" class="d-block w-100">
+        <span class="h4">Portfolio Item {{ item }}</span>
+      </div>
+
+      {% if col_num < 3 %}
+        {% assign col_num = col_num | plus: 1 %}
+      {% else %}
+        {% assign col_num = 1%}
+      {% endif %}
+    {% endfor %}
+  </div>
 
   <div class="post-content">
     {{ content }}

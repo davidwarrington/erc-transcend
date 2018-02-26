@@ -7546,7 +7546,7 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
-h2:after {
+h1:after, h2:after {
   background: #1cd66d;
   content: '';
   display: block;
