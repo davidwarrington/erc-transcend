@@ -25,6 +25,26 @@ twitter_username: jekyllrb
 github_username:  jekyll
 google_analytics: UA-99158765-1
 
+collections:
+  students:
+    permalink: /:collection/:path/
+    output: true
+  lewis-singleton:
+    permalink: /students/:collection/portfolio/:title/
+    output: true
+
+defaults:
+  -
+    scope:
+      type: "students"
+    values:
+      layout: "student"
+  -
+    scope:
+      type: "lewis-singleton"
+    values:
+      layout: "work"
+
 # Build settings
 markdown: kramdown
 # theme: minima

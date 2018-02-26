@@ -1,3 +1,5 @@
+{% assign resources = site.data.resources %}
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -5,6 +7,31 @@
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  {% assign fonts_string = 'https://fonts.googleapis.com/css?family=' %}
+  {% for font in resources.fonts %}
+    {% assign name = font.name | replace: ' ', '+' %}
+
+    {% assign weight_string = '' %}
+    {% for weight in font.weights %}
+      {% if forloop.first %}
+        {% assign weight_string = ':' %}
+      {% endif %}
+
+      {% assign weight_string = weight_string | append: weight %}
+
+      {% unless forloop.last %}
+        {% assign weight_string = weight_string | append: ',' %}
+      {% endunless %}
+    {% endfor %}
+    
+    {% assign fonts_string = fonts_string | append: name | append: weight_string %}
+
+    {% unless forloop.last %}
+      {% assign fonts_string = fonts_string | append: '|' %}
+    {% endunless %}
+  {% endfor %}
+  <link href="{{ fonts_string }}" rel="stylesheet">
 
   <link rel="stylesheet" href="{{ "assets/css/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">

@@ -101,13 +101,13 @@ gulp.task('downloads', () => {
  * Watch HTML/MD files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', () => {
-  gulp.watch('./_assets/sass/*.scss', ['sass']);
-  gulp.watch('./_assets/sass/**/*.scss', ['sass']);
-  gulp.watch('./_assets/js/*.js', ['scripts']);
-  gulp.watch('./_assets/js/**/*.js', ['scripts']);
-  gulp.watch('./_assets/img/**/*', ['images']);
-  gulp.watch('./_assets/downloads/**/*', ['downloads']);
-  gulp.watch(['*.md', '*.html', '_layouts/*.html', '_posts/*', '_includes/*'], ['jekyll-rebuild']);
+  gulp.watch('_assets/sass/*.scss', ['sass']);
+  gulp.watch('_assets/sass/**/*.scss', ['sass']);
+  gulp.watch('_assets/js/*.js', ['scripts']);
+  gulp.watch('_assets/js/**/*.js', ['scripts']);
+  gulp.watch('_assets/img/**/*', ['images']);
+  gulp.watch('_assets/downloads/**/*', ['downloads']);
+  gulp.watch(['*.md', '*.html', '_layouts/*.html', '_posts/*', '_includes/*', '_data/*', '_students/*'], ['jekyll-rebuild']);
 });
 
 /**
