@@ -25,7 +25,7 @@
             max-width: 100%;
         }
 
-        .student-name, .student-link {
+        .student-name, .student-role, .student-link {
             transform: translateY(1rem);
             transition: $transition-long;
 
@@ -39,7 +39,7 @@
             background: rgba(#1b1b1b, 0.85);
             opacity: 1;
 
-            .student-name, .student-link {
+            .student-name, .student-role, .student-link {
                 transform: translateY(0rem);
             }
         }

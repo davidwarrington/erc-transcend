@@ -1,5 +1,4 @@
 ---
 layout: page
+name: Couch
 ---
-
-# Trust me!

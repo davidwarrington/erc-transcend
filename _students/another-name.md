@@ -1,3 +1,0 @@
----
-name: Another Name
----
