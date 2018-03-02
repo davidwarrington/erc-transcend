@@ -7557,6 +7557,10 @@ h1:after, h2:after {
 .no-after:after {
   content: none; }
 
+.no-scroll {
+  height: 100%;
+  overflow: hidden; }
+
 img[src="#"] {
   border: 1px solid black; }
 
