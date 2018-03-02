@@ -1,0 +1,5 @@
+.no-after {
+    &:after {
+        content: none;
+    }
+}

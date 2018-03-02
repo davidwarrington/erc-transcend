@@ -1,0 +1,20 @@
+@keyframes site-intro--upper {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes site-intro--lower {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(100%);
+        display: none;
+    }
+}

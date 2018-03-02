@@ -1,0 +1,19 @@
+.site-intro {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: $zindex-intro;
+
+    &--upper,
+    &--lower {
+        height: 50%;
+    }
+
+    &--upper {
+        animation: site-intro--upper 3.5s ease-in-out 1s 1 normal forwards;
+    }
+
+    &--lower {
+        animation: site-intro--lower 3.5s ease-in-out 1s 1 normal forwards;
+    }
+}
