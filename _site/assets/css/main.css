@@ -7554,6 +7554,9 @@ h1:after, h2:after {
   margin: 0 auto;
   width: 200px; }
 
+.no-after:after {
+  content: none; }
+
 img[src="#"] {
   border: 1px solid black; }
 
@@ -7617,3 +7620,51 @@ img[src="#"] {
   @media (max-width: 767.98px) {
     .student-list--gradient:hover {
       background: rgba(27, 27, 27, 0.85) !important; } }
+
+.site-intro {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 2000; }
+  .site-intro--upper, .site-intro--lower {
+    height: 50%; }
+  .site-intro--upper {
+    -webkit-animation: site-intro--upper 3.5s ease-in-out 1s 1 normal forwards;
+            animation: site-intro--upper 3.5s ease-in-out 1s 1 normal forwards; }
+  .site-intro--lower {
+    -webkit-animation: site-intro--lower 3.5s ease-in-out 1s 1 normal forwards;
+            animation: site-intro--lower 3.5s ease-in-out 1s 1 normal forwards; }
+
+@-webkit-keyframes site-intro--upper {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); } }
+
+@keyframes site-intro--upper {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%); } }
+
+@-webkit-keyframes site-intro--lower {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    display: none; } }
+
+@keyframes site-intro--lower {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%); }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    display: none; } }

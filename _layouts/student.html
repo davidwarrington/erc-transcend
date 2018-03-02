@@ -34,6 +34,10 @@ layout: default
     </div>
   </div>
 
+  {% comment %}
+    {{ site[page.slug] | jsonify }}
+  {% endcomment %}
+  
   <div class="row">
     {% assign col_num = 1 %}
     {% for item in (1..6) %}
