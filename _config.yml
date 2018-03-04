@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: ERC Transcend HE Media Conference 2018
+mobile_title: Transcend Media Con 2018
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -24,6 +25,13 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 google_analytics: UA-99158765-1
+social:
+  facebook: 
+    url:      https://www.facebook.com/Transcend2018/
+    username: Transcend2018
+  twitter:
+    url:      https://twitter.com/Transcend_2018
+    username: Transcend_2018
 
 collections:
   students:

@@ -3,40 +3,37 @@ layout: default
 ---
 <article class="student-page container">
 
-  <header class="row student-header py-5">
-    <div class="col-12 text-center">
-      <h1 class="post-title">{{ page.title | escape }}</h1>
+  {% assign img_string = 'assets/img/' | append: page.picture %}
+
+  <!-- <div class="row">
+    <div class="col-12">
+      <img src="{{ img_string | relative_url }}" alt="{{ page.title }}" class="w-100">
     </div>
+  </div> -->
+
+  <header class="student-header w-100 py-5 text-center">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
   </header>
 
   <div class="row student-bio pb-5">
     <div class="col-10 mx-auto">
-      <p>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, itaque ab aspernatur beatae quidem at debitis quae. Explicabo reprehenderit officiis aliquid nulla iste, perspiciatis, voluptates ex, ad laudantium culpa ea!</span>
-        <span>Ipsam cumque explicabo sed culpa praesentium labore doloribus, neque repellat. Ex voluptas soluta id voluptates illum. Nobis doloribus, error id et nesciunt odio corporis, consequuntur dolore quisquam, natus distinctio consectetur?</span>
-        <span>Fuga voluptatum quidem fugit nam ex? Eos iste possimus, ad iure asperiores maiores rerum? Iusto cupiditate architecto expedita, odio tempora laborum explicabo corporis velit non reprehenderit optio amet, culpa atque?</span>
-      </p>
-      <p>
-        <span>In, sunt consequuntur. Consequatur cupiditate sit nam soluta omnis quisquam quod rem reprehenderit quis earum? Aut natus et, sit optio est suscipit explicabo nam, fugit at aliquam, quidem repellendus. Corrupti?</span>
-        <span>Aperiam atque aspernatur provident, accusantium excepturi rerum, voluptates velit deserunt quasi reiciendis enim dignissimos veniam aut ullam nostrum voluptate in ipsum et sunt autem eveniet assumenda voluptatem earum? Accusantium, illum?</span>
-        <span>Maiores molestias impedit ex alias enim aspernatur perspiciatis praesentium exercitationem unde iure quasi, possimus expedita laudantium. Nam quasi modi saepe dicta nesciunt explicabo fugit dolorem itaque nostrum! Nulla, laboriosam earum.</span>
-      </p>
+      {% for paragraph in page.bio %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
     </div>
   </div>
 
   <div class="row pb-5">
     <div class="col-12 text-center">
-      <span>
-        Follow {{ page.name | truncatewords: 1, '' }}:
-        <a href="#" class="text-dark">fb</a>
-        <a href="#" class="text-dark">tw</a>
+      <span class="h5">
+        Contact {{ page.name | truncatewords: 1, '' }}:
+        <a href="{{ page.social.twitter.url }}" class="text-dark ml-1">
+          <i title="twitter" class="fab fa-twitter"></i></a>
+        <a href="{{ page.social.email.url }}" class="text-dark ml-1">
+          <i title="email" class="far fa-envelope"></i></a>
       </span>
     </div>
   </div>
-
-  {% comment %}
-    {{ site[page.slug] | jsonify }}
-  {% endcomment %}
   
   <div class="row">
     {% assign col_num = 1 %}
@@ -50,8 +47,14 @@ layout: default
       {% endunless %}
 
       <div class="col-{{ col_size }} text-center pb-4 d-flex flex-wrap justify-content-center">
-        <img src="#" alt="#" class="d-block w-100">
-        <a href="{{ item.url | relative_url }}" class="text-dark portfolio-item--link">
+        {% assign img = 'assets/img/portfolio/' 
+          | append: page.slug 
+          | append: '/' 
+          | append: item.picture %}
+        <div class="card-img" style="background: url({{ img | relative_url }}) center top; height: 200px; background-size: cover;">
+          <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
+        </div>
+        <a href="{{ item.url | relative_url }}" class="text-dark portfolio-item--link h5">
             {{ item.name }}              
         </a>
       </div>

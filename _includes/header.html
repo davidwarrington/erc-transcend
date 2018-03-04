@@ -1,11 +1,23 @@
-<header class="site-header" role="banner">
+<header class="site-header bg-light" role="banner">
 
   {% assign default_paths = site.pages | map: "path" %}
   {% assign page_paths = site.header_pages | default: default_paths %}
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  {% assign title_part_one = site.mobile_title | truncatewords: 1, '' %}
+  {% assign mobile_title = site.mobile_title | remove_first: title_part_one %}
+
+  <div class="w-100 text-center d-md-none">
     <a class="navbar-brand" href="{{ "/" | relative_url }}">
+      {{ site.mobile_title | escape | truncatewords: -1, '' }}
+    </a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand d-none d-md-inline-block" href="{{ "/" | relative_url }}">
       {{ site.title | escape }}
+    </a>
+    <a class="navbar-brand d-md-none" href="{{ "/" | relative_url }}">
+      {{ mobile_title | strip | escape }}
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,7 +25,7 @@
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ "/" | relative_url }}">Home</a>
+          <a class="nav-link d-none d-md-inline-block" href="{{ "/" | relative_url }}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Students</a>

@@ -2,30 +2,34 @@
     <div class="row">
         {% for student in site.students %}      
         <div class="d-flex flex-column justify-content-center align-items-start align-items-md-center text-md-center student-list--person">
-            <span class="h2 student-name">{{ student.name }}</span>
-            <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
-            <a href="{{ student.url | relative_url }}" class="student-link">
-                Learn 
-                <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
-                <span class="d-inline d-md-none">more</span>                
-            </a>
+            <div class="student-info--content-wrapper d-flex flex-column">
+                <span class="h2 student-name">{{ student.name }}</span>
+                <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
+                <a href="{{ student.url | relative_url }}" class="student-link">
+                    Learn 
+                    <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
+                    <span class="d-inline d-md-none">more</span>                
+                </a>
+            </div>
         </div>
         {% endfor %}
     </div>
 </div>
 
-<div class="container-fluid student-list">
-    <div class="row">
-        {% for student in site.students %}      
-        <div class="d-flex flex-column justify-content-center justify-content-md-end align-items-start align-items-md-center text-md-center student-list--person student-list--gradient pb-md-5">
-            <span class="h2 student-name">{{ student.name }}</span>
-            <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
-            <a href="{{ student.url | relative_url }}" class="student-link">
-                Learn 
-                <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
-                <span class="d-inline d-md-none">more</span>                
-            </a>
+{% comment %}
+    <div class="container-fluid student-list">
+        <div class="row">
+            {% for student in site.students %}      
+            <div class="d-flex flex-column justify-content-center justify-content-md-end align-items-start align-items-md-center text-md-center student-list--person student-list--gradient pb-md-5">
+                <span class="h2 student-name">{{ student.name }}</span>
+                <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
+                <a href="{{ student.url | relative_url }}" class="student-link">
+                    Learn 
+                    <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
+                    <span class="d-inline d-md-none">more</span>                
+                </a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+{% endcomment %}

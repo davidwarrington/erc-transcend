@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-12">
+            <h2 class="text-center">About</h2>
+        </div>
+        
+        {% for section in page.about %}
+            {% if section.type == 'tagline' %}
+                <div class="col-10 col-md-6 mt-3 mx-auto">
+                    <p class="text-center">{{ section.content }}</p>
+                </div>
+            {% elsif section.type == 'image' %}
+                <div class="col-12 mt-3">
+                    <img src="{{ section.img }}" alt="{{ section.alt_text }}" class="d-block w-100">
+                </div>
+            {% elsif section.type == 'text' %}
+                <div class="col-10 mt-3 mx-auto">
+                    {% for paragraph in section.paragraphs %}
+                        <p>{{ paragraph }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+.student-list {
+    background: url('/assets/img/student-hero.jpg') center top;
+    background-size: cover;
+    height: 80vh;
+
+    .row {
+        height: 100%;
+    }
+
+    &--person {
+        color: white;
+        flex: 0 0 20%;
+        height: 100%;
+        max-width: 20%;
+        opacity: 0;
+        transition: $transition-medium;
+
+        &:hover {
+            background: rgba(#1b1b1b, 0.85);
+            opacity: 1;
+    
+            .student-info--content-wrapper {
+                transform: translateY(0rem);
+            }
+        }
+    }
+
+    .student-info--content-wrapper {
+        transform: translateY(1rem);
+        transition: $transition-long;
+
+        // @include media-breakpoint-down(sm) {
+        //     padding-left: 1rem;
+        //     transform: translateX(-1rem);
+        // }
+    }
+}
