@@ -37,8 +37,8 @@ layout: default
   
   <div class="row">
     {% assign col_num = 1 %}
-    {% assign modulo = site[page.slug].size | modulo: 3 %}
-    {% for item in site[page.slug] %}
+    {% assign modulo = page.portfolio.size | modulo: 3 %}
+    {% for item in page.portfolio %}
 
       {% unless col_num == 1 %}
         {% assign col_size = 6 %}
@@ -46,17 +46,23 @@ layout: default
         {% assign col_size = 12 %}
       {% endunless %}
 
-      <div class="col-{{ col_size }} text-center pb-4 d-flex flex-wrap justify-content-center">
+      <div class="col-{{ col_size }} text-center pb-4">
         {% assign img = 'assets/img/portfolio/' 
           | append: page.slug 
           | append: '/' 
           | append: item.picture %}
-        <div class="card-img" style="background: url({{ img | relative_url }}) center top; height: 200px; background-size: cover;">
+        <div class="card-img" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
           <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
+          {% if item.yt %}
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ item.yt }}' allowfullscreen></iframe>
+            </div>
+          {% endif %}
         </div>
-        <a href="{{ item.url | relative_url }}" class="text-dark portfolio-item--link h5">
-            {{ item.name }}              
-        </a>
+        <div class="portfolio-item--link">
+          <h5>{{ item.name }}</h5>
+          <span>{{ item.desc }}</span>
+        </div>
       </div>
 
       {% if col_num < 3 %}
