@@ -7564,9 +7564,9 @@ h1:after, h2:after {
 img[src="#"] {
   border: 1px solid black; }
 
-.portfolio-item--link {
-  margin-top: 35px;
-  margin-bottom: 55px; }
+.portfolio-item--details {
+  padding-top: 35px;
+  padding-bottom: 55px; }
 
 .site-intro {
   height: 100vh;
@@ -7587,6 +7587,46 @@ img[src="#"] {
   -webkit-background-size: cover;
           background-size: cover;
   height: 80vh; }
+  .student-list--student {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    background-position: center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%;
+    color: white;
+    position: relative;
+    -webkit-transition: 0.7s all ease-in-out;
+    -o-transition: 0.7s all ease-in-out;
+    transition: 0.7s all ease-in-out; }
+    .student-list--student:before {
+      background: rgba(27, 27, 27, 0);
+      content: '';
+      position: absolute;
+      height: 100%;
+      -webkit-transition: 0.3s all ease-in-out;
+      -o-transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out;
+      width: 100%; }
+    .student-list--student .student-info--content {
+      opacity: 0;
+      -webkit-transform: translateY(1rem);
+          -ms-transform: translateY(1rem);
+              transform: translateY(1rem);
+      -webkit-transition: 0.5s all ease-in-out;
+      -o-transition: 0.5s all ease-in-out;
+      transition: 0.5s all ease-in-out; }
+    .student-list--student:hover {
+      -webkit-background-size: auto 110%;
+              background-size: auto 110%; }
+      .student-list--student:hover:before {
+        background: rgba(27, 27, 27, 0.85); }
+      .student-list--student:hover .student-info--content {
+        opacity: 1;
+        -webkit-transform: translateY(0rem);
+            -ms-transform: translateY(0rem);
+                transform: translateY(0rem); }
   .student-list .row {
     height: 100%; }
   .student-list--person {

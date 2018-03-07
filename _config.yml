@@ -37,41 +37,13 @@ collections:
   students:
     permalink: /:collection/:path/
     output: true
-  lewis-singleton:
-    permalink: /students/:collection/portfolio/:title/
-    output: true
 
 defaults:
-  -
-    scope:
-      type: "students"
+  - scope:
+      type: students
     values:
-      layout: "student"
-  -
-    scope:
-      type: "daniel-taylor-crossland"
-    values:
-      layout: "work"
-  -
-    scope:
-      type: "sam-milner"
-    values:
-      layout: "work"
-  -
-    scope:
-      type: "lewis-singleton"
-    values:
-      layout: "work"
-  -
-    scope:
-      type: "chris-wood"
-    values:
-      layout: "work"
-  -
-    scope:
-      type: "harley-young"
-    values:
-      layout: "work"
+      layout: student
+
 
 # Build settings
 markdown: kramdown

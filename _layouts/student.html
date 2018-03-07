@@ -3,13 +3,15 @@ layout: default
 ---
 <article class="student-page container">
 
-  {% assign img_string = 'assets/img/' | append: page.picture %}
+  {% comment %}
+    {% assign img_string = 'assets/img/' | append: page.picture %}
 
-  <!-- <div class="row">
-    <div class="col-12">
-      <img src="{{ img_string | relative_url }}" alt="{{ page.title }}" class="w-100">
+    <div class="row">
+      <div class="col-12">
+        <img src="{{ img_string | relative_url }}" alt="{{ page.title }}" class="w-100">
+      </div>
     </div>
-  </div> -->
+  {% endcomment %}
 
   <header class="student-header w-100 py-5 text-center">
       <h1 class="post-title">{{ page.title | escape }}</h1>
@@ -23,17 +25,21 @@ layout: default
     </div>
   </div>
 
-  <div class="row pb-5">
-    <div class="col-12 text-center">
-      <span class="h5">
-        Contact {{ page.name | truncatewords: 1, '' }}:
-        <a href="{{ page.social.twitter.url }}" class="text-dark ml-1">
-          <i title="twitter" class="fab fa-twitter"></i></a>
-        <a href="{{ page.social.email.url }}" class="text-dark ml-1">
-          <i title="email" class="far fa-envelope"></i></a>
-      </span>
+  {% if page.social %}
+    <div class="row pb-5">
+      <div class="col-12 text-center">
+        <span class="h5">
+          Contact {{ page.name | truncatewords: 1, '' }}:
+  
+          {% for link in page.social %}
+            <a href="{{ link.url }}" class="text-dark ml-1">
+              <span class="sr-only">{{ link.name }}</span>
+              <i class="{{ link.icon_code }}"></i></a>
+          {% endfor %}
+        </span>
+      </div>
     </div>
-  </div>
+  {% endif %}
   
   <div class="row">
     {% assign col_num = 1 %}
@@ -47,21 +53,22 @@ layout: default
       {% endunless %}
 
       <div class="col-{{ col_size }} text-center pb-4">
-        {% assign img = 'assets/img/portfolio/' 
-          | append: page.slug 
-          | append: '/' 
-          | append: item.picture %}
-        <div class="card-img" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
-          <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
-          {% if item.yt %}
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ item.yt }}' allowfullscreen></iframe>
-            </div>
-          {% endif %}
-        </div>
-        <div class="portfolio-item--link">
+        {% if item.yt %}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ item.yt }}' allowfullscreen></iframe>
+          </div>
+        {% else %}
+          {% assign img = 'assets/img/' 
+            | append: page.slug 
+            | append: '/portfolio/' 
+            | append: item.picture %}
+          <div class="" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
+            <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
+          </div>
+        {% endif %}
+        <div class="portfolio-item--details">
           <h5>{{ item.name }}</h5>
-          <span>{{ item.desc }}</span>
+          <p class="portfolio-item--desc">{{ item.desc }}</p>
         </div>
       </div>
 

@@ -3,6 +3,43 @@
     background-size: cover;
     height: 80vh;
 
+    &--student {
+        flex: 1;
+        background-position: center;
+        background-size: auto 100%;
+        color: white;
+        position: relative;
+        transition: $transition-xlong;
+
+        &:before {
+            background: rgba(#1b1b1b, 0);
+            content: '';
+            position: absolute;
+            height: 100%;
+            transition: $transition-medium;
+            width: 100%;
+        }
+
+        .student-info--content {
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: $transition-long;
+        }
+
+        &:hover {
+            background-size: auto 110%;
+
+            &:before {
+                background: rgba(#1b1b1b, 0.85);
+            }
+
+            .student-info--content {
+                opacity: 1;
+                transform: translateY(0rem);
+            }
+        }
+    }
+
     .row {
         height: 100%;
     }
