@@ -7,8 +7,11 @@ $(document).ready(function () {
             lower: $('.site-intro--lower'),
             upper: $('.site-intro--upper'),
         };
+
+        console.log(true);
         
         site_intro.lower.on('animationend', function () {
+            console.log('animation over');
             site_intro.el.hide();
             site_intro.body.removeClass('no-scroll');
         });
