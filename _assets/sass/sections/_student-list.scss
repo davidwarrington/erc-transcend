@@ -5,31 +5,37 @@
 
     &--student {
         flex: 1;
-        background-position: center top;
-        background-size: cover;
+        background-position: center;
+        background-size: auto 100%;
         color: white;
-        transition: $transition-medium;
+        position: relative;
+        transition: $transition-xlong;
 
-        .student-info--content {
-            background: rgba(0, 0, 0, 0);
+        &:before {
+            background: rgba(#1b1b1b, 0);
+            content: '';
+            position: absolute;
             height: 100%;
-            opacity: 0;
             transition: $transition-medium;
             width: 100%;
+        }
 
-            &--wrapper {
-                transition: $transition-long;
-            }
+        .student-info--content {
+            opacity: 0;
+            transform: translateY(1rem);
+            transition: $transition-long;
         }
 
         &:hover {
-            .student-info--content {
-                background: rgba(#1b1b1b, 0.85);
-                opacity: 1;
+            background-size: auto 110%;
 
-                &-wrapper {
-                    transform: translateY(0rem);
-                }
+            &:before {
+                background: rgba(#1b1b1b, 0.85);
+            }
+
+            .student-info--content {
+                opacity: 1;
+                transform: translateY(0rem);
             }
         }
     }

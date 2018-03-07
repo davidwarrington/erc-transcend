@@ -24,7 +24,7 @@ portfolio:
         yt:      zUNzw4D5Ylk
     -
         name:    Couch
-        desc:    A animation that was produced in Y1 of the BA in Contemporary Media, Design And Production. The story follows a newly wedded couple who move into their new house and their cycle of life.
+        desc:    An animation that was produced in Y1 of the BA in Contemporary Media, Design And Production. The story follows a newly wedded couple who move into their new house and their cycle of life.
         slug:    couch
         yt:      1OuGS-JjahQ    
     -

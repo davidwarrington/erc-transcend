@@ -7565,11 +7565,8 @@ img[src="#"] {
   border: 1px solid black; }
 
 .portfolio-item--details {
-  margin-top: 35px;
-  margin-bottom: 55px; }
-
-.portfolio-item--desc {
-  display: none; }
+  padding-top: 35px;
+  padding-bottom: 55px; }
 
 .site-intro {
   height: 100vh;
@@ -7595,29 +7592,38 @@ img[src="#"] {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    background-position: center top;
-    -webkit-background-size: cover;
-            background-size: cover;
+    background-position: center;
+    -webkit-background-size: auto 100%;
+            background-size: auto 100%;
     color: white;
-    -webkit-transition: 0.3s all ease-in-out;
-    -o-transition: 0.3s all ease-in-out;
-    transition: 0.3s all ease-in-out; }
-    .student-list--student .student-info--content {
-      background: transparent;
+    position: relative;
+    -webkit-transition: 0.7s all ease-in-out;
+    -o-transition: 0.7s all ease-in-out;
+    transition: 0.7s all ease-in-out; }
+    .student-list--student:before {
+      background: rgba(27, 27, 27, 0);
+      content: '';
+      position: absolute;
       height: 100%;
-      opacity: 0;
       -webkit-transition: 0.3s all ease-in-out;
       -o-transition: 0.3s all ease-in-out;
       transition: 0.3s all ease-in-out;
       width: 100%; }
-      .student-list--student .student-info--content--wrapper {
-        -webkit-transition: 0.5s all ease-in-out;
-        -o-transition: 0.5s all ease-in-out;
-        transition: 0.5s all ease-in-out; }
-    .student-list--student:hover .student-info--content {
-      background: rgba(27, 27, 27, 0.85);
-      opacity: 1; }
-      .student-list--student:hover .student-info--content-wrapper {
+    .student-list--student .student-info--content {
+      opacity: 0;
+      -webkit-transform: translateY(1rem);
+          -ms-transform: translateY(1rem);
+              transform: translateY(1rem);
+      -webkit-transition: 0.5s all ease-in-out;
+      -o-transition: 0.5s all ease-in-out;
+      transition: 0.5s all ease-in-out; }
+    .student-list--student:hover {
+      -webkit-background-size: auto 110%;
+              background-size: auto 110%; }
+      .student-list--student:hover:before {
+        background: rgba(27, 27, 27, 0.85); }
+      .student-list--student:hover .student-info--content {
+        opacity: 1;
         -webkit-transform: translateY(0rem);
             -ms-transform: translateY(0rem);
                 transform: translateY(0rem); }

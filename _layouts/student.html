@@ -3,13 +3,15 @@ layout: default
 ---
 <article class="student-page container">
 
-  {% assign img_string = 'assets/img/' | append: page.picture %}
+  {% comment %}
+    {% assign img_string = 'assets/img/' | append: page.picture %}
 
-  <!-- <div class="row">
-    <div class="col-12">
-      <img src="{{ img_string | relative_url }}" alt="{{ page.title }}" class="w-100">
+    <div class="row">
+      <div class="col-12">
+        <img src="{{ img_string | relative_url }}" alt="{{ page.title }}" class="w-100">
+      </div>
     </div>
-  </div> -->
+  {% endcomment %}
 
   <header class="student-header w-100 py-5 text-center">
       <h1 class="post-title">{{ page.title | escape }}</h1>

@@ -11,16 +11,13 @@
 
             <div class="student-info--content 
                         d-flex flex-column align-items-center justify-content-center text-center">
-                <div class="student-info--content-wrapper
-                            d-flex flex-column">
-                    <span class="h2 student-name">{{ student.name }}</span>
-                    <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
-                    <a href="{{ student.url | relative_url }}" class="student-link">
-                        Learn 
-                        <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
-                        <span class="d-inline d-md-none">more</span>                
-                    </a>
-                </div>
+                <span class="h2 student-name">{{ student.name | replace: '-', '&#8209;' }}</span>
+                <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
+                <a href="{{ student.url | relative_url }}" class="student-link">
+                    Learn 
+                    <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>
+                    <span class="d-inline d-md-none">more</span>                
+                </a>
             </div>
 
         </div>

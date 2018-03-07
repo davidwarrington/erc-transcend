@@ -15,11 +15,9 @@ $(document).ready(function () {
     }
 
     if ($('.portfolio-item--desc').length) {
-        $('.portfolio-item--details').on('click', function (e) {
-            console.log($(e.target));
-
-            $(e.target).siblings('.portfolio--item-desc').show();
-        });
+        // $('.portfolio-item--details').hover(function (e) {
+        //     $(this).find('.portfolio-item--desc').toggle();
+        // });
     }
 
 
