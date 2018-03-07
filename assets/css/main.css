@@ -7564,9 +7564,12 @@ h1:after, h2:after {
 img[src="#"] {
   border: 1px solid black; }
 
-.portfolio-item--link {
+.portfolio-item--details {
   margin-top: 35px;
   margin-bottom: 55px; }
+
+.portfolio-item--desc {
+  display: none; }
 
 .site-intro {
   height: 100vh;
@@ -7587,6 +7590,37 @@ img[src="#"] {
   -webkit-background-size: cover;
           background-size: cover;
   height: 80vh; }
+  .student-list--student {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    background-position: center top;
+    -webkit-background-size: cover;
+            background-size: cover;
+    color: white;
+    -webkit-transition: 0.3s all ease-in-out;
+    -o-transition: 0.3s all ease-in-out;
+    transition: 0.3s all ease-in-out; }
+    .student-list--student .student-info--content {
+      background: transparent;
+      height: 100%;
+      opacity: 0;
+      -webkit-transition: 0.3s all ease-in-out;
+      -o-transition: 0.3s all ease-in-out;
+      transition: 0.3s all ease-in-out;
+      width: 100%; }
+      .student-list--student .student-info--content--wrapper {
+        -webkit-transition: 0.5s all ease-in-out;
+        -o-transition: 0.5s all ease-in-out;
+        transition: 0.5s all ease-in-out; }
+    .student-list--student:hover .student-info--content {
+      background: rgba(27, 27, 27, 0.85);
+      opacity: 1; }
+      .student-list--student:hover .student-info--content-wrapper {
+        -webkit-transform: translateY(0rem);
+            -ms-transform: translateY(0rem);
+                transform: translateY(0rem); }
   .student-list .row {
     height: 100%; }
   .student-list--person {
