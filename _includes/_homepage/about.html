@@ -12,7 +12,8 @@
                 </div>
             {% elsif section.type == 'image' %}
                 <div class="col-12 mt-3">
-                    <img src="{{ section.img }}" alt="{{ section.alt_text }}" class="d-block w-100">
+                    {% assign img = section.img | prepend: '/assets/img/' %}
+                    <img src="{{ img | relative_url }}" alt="{{ section.alt_text }}" class="d-block w-100">
                 </div>
             {% elsif section.type == 'text' %}
                 <div class="col-10 mt-3 mx-auto">

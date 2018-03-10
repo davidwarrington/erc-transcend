@@ -9,8 +9,8 @@ about:
     #     content: 0
     - 
         type: image
-        img: '#'
-        alt_text: '#'
+        img: student-hero.jpg
+        alt_text: Students getting ready for ERC Transcend Conference
     -
         type: text
         paragraphs:

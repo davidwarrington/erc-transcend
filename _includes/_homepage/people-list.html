@@ -1,4 +1,4 @@
-<div class="w-100 student-list d-flex">
+<div class="student-list d-flex flex-column flex-md-row mx-auto">
     {% for student in site.students %}
         {% assign student_image = student.slug 
             | prepend: 'assets/img/' 
@@ -12,7 +12,7 @@
             <div class="student-info--content 
                         d-flex flex-column align-items-center justify-content-center text-center">
                 <span class="h2 student-name">{{ student.name | replace: '-', '&#8209;' }}</span>
-                <span class="h4 student-role d-none d-md-inline">{{ student.role }}</span>
+                <span class="h4 student-role">{{ student.role }}</span>
                 <a href="{{ student.url | relative_url }}" class="student-link">
                     Learn 
                     <span class="d-none d-md-inline">about {{ student.name | truncatewords: 1, '' }}</span>

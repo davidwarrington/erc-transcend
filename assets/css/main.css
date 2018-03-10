@@ -7554,6 +7554,12 @@ h1:after, h2:after {
   margin: 0 auto;
   width: 200px; }
 
+h1 .h-xl {
+  font-size: 5rem; }
+  @media (max-width: 767.98px) {
+    h1 .h-xl {
+      font-size: 2.5rem; } }
+
 .no-after:after {
   content: none; }
 
@@ -7583,16 +7589,20 @@ img[src="#"] {
             animation: site-intro--lower 3.5s ease-in-out 1s 1 normal forwards; }
 
 .student-list {
-  background: url("/assets/img/student-hero.jpg") center top;
   -webkit-background-size: cover;
           background-size: cover;
   height: 80vh; }
+  @media (max-width: 767.98px) {
+    .student-list {
+      height: auto;
+      width: 90%; } }
   .student-list--student {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
     background-position: center;
+    background-repeat: no-repeat;
     -webkit-background-size: auto 100%;
             background-size: auto 100%;
     color: white;
@@ -7600,6 +7610,14 @@ img[src="#"] {
     -webkit-transition: 0.7s all ease-in-out;
     -o-transition: 0.7s all ease-in-out;
     transition: 0.7s all ease-in-out; }
+    @media (max-width: 767.98px) {
+      .student-list--student {
+        -webkit-border-radius: 0.25rem;
+                border-radius: 0.25rem;
+        margin-top: 2rem;
+        padding-top: 75%;
+        padding-bottom: 10%;
+        width: 100%; } }
     .student-list--student:before {
       background: rgba(27, 27, 27, 0);
       content: '';
@@ -7609,6 +7627,9 @@ img[src="#"] {
       -o-transition: 0.3s all ease-in-out;
       transition: 0.3s all ease-in-out;
       width: 100%; }
+      @media (max-width: 767.98px) {
+        .student-list--student:before {
+          content: none; } }
     .student-list--student .student-info--content {
       opacity: 0;
       -webkit-transform: translateY(1rem);
@@ -7617,6 +7638,12 @@ img[src="#"] {
       -webkit-transition: 0.5s all ease-in-out;
       -o-transition: 0.5s all ease-in-out;
       transition: 0.5s all ease-in-out; }
+      @media (max-width: 767.98px) {
+        .student-list--student .student-info--content {
+          opacity: 1;
+          -webkit-transform: none;
+              -ms-transform: none;
+                  transform: none; } }
     .student-list--student:hover {
       -webkit-background-size: auto 110%;
               background-size: auto 110%; }
@@ -7627,34 +7654,6 @@ img[src="#"] {
         -webkit-transform: translateY(0rem);
             -ms-transform: translateY(0rem);
                 transform: translateY(0rem); }
-  .student-list .row {
-    height: 100%; }
-  .student-list--person {
-    color: white;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 20%;
-        -ms-flex: 0 0 20%;
-            flex: 0 0 20%;
-    height: 100%;
-    max-width: 20%;
-    opacity: 0;
-    -webkit-transition: 0.3s all ease-in-out;
-    -o-transition: 0.3s all ease-in-out;
-    transition: 0.3s all ease-in-out; }
-    .student-list--person:hover {
-      background: rgba(27, 27, 27, 0.85);
-      opacity: 1; }
-      .student-list--person:hover .student-info--content-wrapper {
-        -webkit-transform: translateY(0rem);
-            -ms-transform: translateY(0rem);
-                transform: translateY(0rem); }
-  .student-list .student-info--content-wrapper {
-    -webkit-transform: translateY(1rem);
-        -ms-transform: translateY(1rem);
-            transform: translateY(1rem);
-    -webkit-transition: 0.5s all ease-in-out;
-    -o-transition: 0.5s all ease-in-out;
-    transition: 0.5s all ease-in-out; }
 
 @-webkit-keyframes site-intro--upper {
   0% {

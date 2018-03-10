@@ -1,15 +1,30 @@
 .student-list {
-    background: url('/assets/img/student-hero.jpg') center top;
+    // background: url('/assets/img/student-hero.jpg') center top;
     background-size: cover;
     height: 80vh;
+
+    @include media-breakpoint-down(sm) {
+        height: auto;
+        width: 90%;
+    }
 
     &--student {
         flex: 1;
         background-position: center;
+        background-repeat: no-repeat;        
         background-size: auto 100%;
         color: white;
         position: relative;
         transition: $transition-xlong;
+
+        @include media-breakpoint-down(sm) {
+            // background-size: cover;
+            border-radius: $border-radius;
+            margin-top: 2rem;
+            padding-top: 75%;
+            padding-bottom: 10%;
+            width: 100%;
+        }
 
         &:before {
             background: rgba(#1b1b1b, 0);
@@ -18,12 +33,21 @@
             height: 100%;
             transition: $transition-medium;
             width: 100%;
+
+            @include media-breakpoint-down(sm) {
+                content: none;
+            }
         }
 
         .student-info--content {
             opacity: 0;
             transform: translateY(1rem);
             transition: $transition-long;
+
+            @include media-breakpoint-down(sm) {
+                opacity: 1;
+                transform: none;
+            }
         }
 
         &:hover {
@@ -38,37 +62,5 @@
                 transform: translateY(0rem);
             }
         }
-    }
-
-    .row {
-        height: 100%;
-    }
-
-    &--person {
-        color: white;
-        flex: 0 0 20%;
-        height: 100%;
-        max-width: 20%;
-        opacity: 0;
-        transition: $transition-medium;
-
-        &:hover {
-            background: rgba(#1b1b1b, 0.85);
-            opacity: 1;
-    
-            .student-info--content-wrapper {
-                transform: translateY(0rem);
-            }
-        }
-    }
-
-    .student-info--content-wrapper {
-        transform: translateY(1rem);
-        transition: $transition-long;
-
-        // @include media-breakpoint-down(sm) {
-        //     padding-left: 1rem;
-        //     transform: translateX(-1rem);
-        // }
     }
 }

@@ -1,14 +1,14 @@
 {%- assign title_start = site.title | truncatewords: 3, '' -%}
 {%- assign title_end = site.title | | remove_first: title_start }} -%}
-<header class="container-fluid text-center site-intro">
+<h1 class="container-fluid text-center site-intro">
     <div class="row bg-primary site-intro--upper bg-primary">
         <div class="col-12 d-flex flex-column justify-content-end">
-            <h1 class="no-after">{{ title_start }}</h1>
+            <span class="h-xl no-after">{{ title_start }}</span>
         </div>
     </div>
     <div class="row site-intro--lower bg-light">
         <div class="col-12">
-            <h1 class="no-after">{{ title_end }}</h1>
+            <span class="h-xl no-after">{{ title_end }}</span>
         </div>
     </div>
-</header>
+</h1>
