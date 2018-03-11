@@ -7589,10 +7589,20 @@ img[src="#"] {
   padding-top: 35px;
   padding-bottom: 55px; }
 
-.portfolio-item--picture:before {
-  content: '';
-  display: block;
-  padding-top: 56.25%; }
+.portfolio-item--picture {
+  background-position: center;
+  -webkit-background-size: 100% auto;
+          background-size: 100% auto;
+  -webkit-transition: 0.5s all ease-in-out;
+  -o-transition: 0.5s all ease-in-out;
+  transition: 0.5s all ease-in-out; }
+  .portfolio-item--picture:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; }
+  .portfolio-item--picture:hover {
+    -webkit-background-size: 110% auto;
+            background-size: 110% auto; }
 
 .site-intro {
   height: 100vh;

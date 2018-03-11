@@ -31,11 +31,12 @@ portfolio:
         name:    Station Poster
         desc:    A poster for Lewis’ animated short film Station.
         picture: station-poster.jpg
+        img_alt: Station Poster
         slug:    station-poster
     -
         name:    Eating Soup with a Fork
         desc:    A Documentary By Lewis centred around living with Obsessive Compulsive Disorder.
-        picture: eating-soup-with-a-fork
+        slug:    eating-soup-with-a-fork
         yt:      fNdx9iAaOgE
     -
         name:    Christmas Cards 2015 & 2017

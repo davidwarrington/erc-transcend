@@ -4,9 +4,17 @@
 }
 
 .portfolio-item--picture {
+    background-position: center;
+    background-size: 100% auto;
+    transition: $transition-long;
+
     &:before {
         content: '';
         display: block;
         padding-top: 56.25%;
+    }
+
+    &:hover {
+        background-size: 110% auto;
     }
 }

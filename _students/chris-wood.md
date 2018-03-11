@@ -9,15 +9,18 @@ portfolio:
         name: Adobe Cloud Poster
         desc: Designed for a brief for a reimagining of the Adobe cloud brand for D&amp;AD.
         picture: adobe-cloud-poster.jpg
+        img_alt: Adobe Cloud Poster
         slug: adobe-cloud-poster
     -
         name: Phobia's Asylum
         desc: A poster for my Professional Development that involved a Psychological Horror based around an abandoned asylum, where various phobias rule.
         picture: phobias-asylum.jpg
+        img_alt: Phobias Asylum
         slug: phobias-asylum
     -
         name: Tardis
         desc: A 3D model of the TARDIS from Doctor Who, being a fan of the sci fi tv show it made sense that one of my projects would coincide.
         picture: tardis.jpg
+        img_alt: Tardis
         slug: tardis
 ---

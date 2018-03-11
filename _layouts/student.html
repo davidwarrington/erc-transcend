@@ -62,10 +62,11 @@ layout: default
             | append: page.slug 
             | append: '/portfolio/' 
             | append: item.picture %}
-          <div class="portfolio-item--picture" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
-            <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
+          <div class="portfolio-item--picture" style="background-image: url('{{ img | relative_url }}');">
+            <img src="{{ img | relative_url }}" alt="{{ item.img_alt }}" class="sr-only">
           </div>
         {% endif %}
+
         <div class="portfolio-item--details">
           <h5>{{ item.name }}</h5>
           <p class="portfolio-item--desc">{{ item.desc }}</p>
