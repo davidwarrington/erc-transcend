@@ -26,16 +26,14 @@
             width: 100%;
         }
 
-        &:before {
-            background: rgba(#1b1b1b, 0);
-            content: '';
-            position: absolute;
-            height: 100%;
-            transition: $transition-medium;
-            width: 100%;
-
-            @include media-breakpoint-down(sm) {
-                content: none;
+        @include media-breakpoint-up(md) {
+            &:before {
+                background: rgba(#1b1b1b, 0);
+                content: '';
+                position: absolute;
+                height: 100%;
+                transition: $transition-medium;
+                width: 100%;
             }
         }
 
@@ -50,16 +48,18 @@
             }
         }
 
-        &:hover {
-            background-size: auto 110%;
+        @include media-breakpoint-up(md) {
+            &:hover {
+                background-size: auto 110%;
 
-            &:before {
-                background: rgba(#1b1b1b, 0.85);
-            }
+                &:before {
+                    background: rgba(#1b1b1b, 0.85);
+                }
 
-            .student-info--content {
-                opacity: 1;
-                transform: translateY(0rem);
+                .student-info--content {
+                    opacity: 1;
+                    transform: translateY(0rem);
+                }
             }
         }
     }

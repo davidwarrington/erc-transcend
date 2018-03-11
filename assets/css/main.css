@@ -7648,18 +7648,16 @@ img[src="#"] {
         padding-top: 75%;
         padding-bottom: 10%;
         width: 100%; } }
-    .student-list--student:before {
-      background: rgba(27, 27, 27, 0);
-      content: '';
-      position: absolute;
-      height: 100%;
-      -webkit-transition: 0.3s all ease-in-out;
-      -o-transition: 0.3s all ease-in-out;
-      transition: 0.3s all ease-in-out;
-      width: 100%; }
-      @media (max-width: 767.98px) {
-        .student-list--student:before {
-          content: none; } }
+    @media (min-width: 768px) {
+      .student-list--student:before {
+        background: rgba(27, 27, 27, 0);
+        content: '';
+        position: absolute;
+        height: 100%;
+        -webkit-transition: 0.3s all ease-in-out;
+        -o-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
+        width: 100%; } }
     .student-list--student .student-info--content {
       opacity: 0;
       -webkit-transform: translateY(1rem);
@@ -7674,16 +7672,17 @@ img[src="#"] {
           -webkit-transform: none;
               -ms-transform: none;
                   transform: none; } }
-    .student-list--student:hover {
-      -webkit-background-size: auto 110%;
-              background-size: auto 110%; }
-      .student-list--student:hover:before {
-        background: rgba(27, 27, 27, 0.85); }
-      .student-list--student:hover .student-info--content {
-        opacity: 1;
-        -webkit-transform: translateY(0rem);
-            -ms-transform: translateY(0rem);
-                transform: translateY(0rem); }
+    @media (min-width: 768px) {
+      .student-list--student:hover {
+        -webkit-background-size: auto 110%;
+                background-size: auto 110%; }
+        .student-list--student:hover:before {
+          background: rgba(27, 27, 27, 0.85); }
+        .student-list--student:hover .student-info--content {
+          opacity: 1;
+          -webkit-transform: translateY(0rem);
+              -ms-transform: translateY(0rem);
+                  transform: translateY(0rem); } }
 
 .student-list--link__mobile {
   bottom: 0;
