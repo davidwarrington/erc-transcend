@@ -7558,7 +7558,10 @@ h1 .h-xl {
   font-size: 5rem; }
   @media (max-width: 767.98px) {
     h1 .h-xl {
-      font-size: 2.5rem; } }
+      font-size: 1.5rem; } }
+
+.font-size-large {
+  font-size: 1.75rem; }
 
 .no-after:after {
   content: none; }
@@ -7569,6 +7572,18 @@ h1 .h-xl {
 
 img[src="#"] {
   border: 1px solid black; }
+
+.navbar--dropdown {
+  -webkit-border-radius: 0;
+          border-radius: 0; }
+  @media (max-width: 991.98px) {
+    .navbar--dropdown {
+      border: 0;
+      margin-left: -16px;
+      width: 100vw; } }
+
+.brandbar {
+  margin: 0; }
 
 .portfolio-item--details {
   padding-top: 35px;
@@ -7654,6 +7669,12 @@ img[src="#"] {
         -webkit-transform: translateY(0rem);
             -ms-transform: translateY(0rem);
                 transform: translateY(0rem); }
+
+.student-list--link__mobile {
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  width: 100%; }
 
 @-webkit-keyframes site-intro--upper {
   0% {

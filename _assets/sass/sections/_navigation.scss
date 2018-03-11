@@ -1,0 +1,13 @@
+.navbar--dropdown {
+    border-radius: 0;
+
+    @include media-breakpoint-down(md) {
+        border: 0;
+        margin-left: -16px;
+        width: 100vw;
+    }   
+}
+
+.brandbar {
+    margin: 0;
+}

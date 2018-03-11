@@ -17,9 +17,8 @@ title: ERC Transcend HE Media Conference 2018
 mobile_title: Transcend Media Conference 2018
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  As an annual occurrence the Third Years of the BA In Contemporary Media, 
+  Design and Production of East Riding College host a media focused conference.
 # baseurl: "/erc-transcend" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
@@ -34,7 +33,7 @@ social:
     username: Transcend_2018
 event: 
   date: 11/05/2018
-  time: 13:00
+  time: TBC
   location: Parkway Cinema, 
             Flemingate, 
             Beverley

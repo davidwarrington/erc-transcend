@@ -1,4 +1,5 @@
 <div class="student-list d-flex flex-column flex-md-row mx-auto">
+
     {% for student in site.students %}
         {% assign student_image = student.slug 
             | prepend: 'assets/img/' 
@@ -8,6 +9,8 @@
         <div class="student-list--student 
                     d-flex flex-column align-items-center justify-content-center"
              style="background-image: url('{{ student_image | relative_url }}')">
+
+            <a href="{{ student.url | relative_url }}" class="student-list--link__mobile d-md-none"></a>
 
             <div class="student-info--content 
                         d-flex flex-column align-items-center justify-content-center text-center">
