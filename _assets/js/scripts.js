@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // if (window.location.pathname === '/') {
+    if ($('.site-intro').length) {
         var site_intro = {
             body: $('body'),
             el: $('.site-intro'),
@@ -12,13 +12,6 @@ $(document).ready(function () {
             site_intro.el.hide();
             site_intro.body.removeClass('no-scroll');
         });
-    // }
-
-    if ($('.portfolio-item--desc').length) {
-        // $('.portfolio-item--details').hover(function (e) {
-        //     $(this).find('.portfolio-item--desc').toggle();
-        // });
     }
-
 
 });

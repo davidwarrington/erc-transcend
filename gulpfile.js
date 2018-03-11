@@ -3,6 +3,7 @@ const gulp         = require('gulp'),
       browser_sync = require('browser-sync'),
       concat       = require('gulp-concat'),
       cp           = require('child_process'),
+      css_import   = require('gulp-cssimport'),
       sass         = require('gulp-sass');
 
 const config = {
@@ -50,6 +51,7 @@ gulp.task('sass', () => {
                style: 'expanded',
                onError: browser_sync.notify
              }))
+             .pipe(css_import())
              .pipe(autoprefixer(
                ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
                {cascade: true}
@@ -67,6 +69,7 @@ gulp.task('scripts', () => {
                config.npm_dir + '/jquery/dist/jquery.min.js',
                config.npm_dir + '/popper.js/dist/umd/popper.min.js',
                config.npm_dir + '/bootstrap/dist/js/bootstrap.min.js',
+               config.npm_dir + '/lightbox2/dist/js/lightbox.min.js',
                './_assets/js/vendor/*.js',
                './_assets/js/*.js'
              ])

@@ -15,8 +15,10 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
     "gulp-concat": "^2.6.1",
+    "gulp-cssimport": "^6.0.1",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.3.1",
+    "lightbox2": "^2.10.0",
     "popper.js": "^1.12.9"
   }
 }

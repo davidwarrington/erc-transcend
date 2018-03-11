@@ -52,7 +52,7 @@ layout: default
         {% assign col_size = 12 %}
       {% endunless %}
 
-      <div class="col-12 col-md-{{ col_size }} text-center pb-4">
+      <div class="portfolio-item col-12 col-md-{{ col_size }} text-center pb-4">
         {% if item.yt %}
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ item.yt }}' allowfullscreen></iframe>
@@ -60,15 +60,25 @@ layout: default
         {% else %}
           {% assign img = 'assets/img/' 
             | append: page.slug 
-            | append: '/portfolio/' 
+            | append: '/portfolio/thumbs/' 
             | append: item.picture %}
-          <div class="portfolio-item--picture" style="background-image: url('{{ img | relative_url }}');">
+          <a 
+            class="portfolio-item--picture" 
+            style="background-image: url('{{ img | relative_url }}');"
+            href="{{ img | replace: 'thumbs/', '' | relative_url }}" 
+            data-lightbox="{{ item.picture | relative_url }}"
+          >
             <img src="{{ img | relative_url }}" alt="{{ item.img_alt }}" class="sr-only">
-          </div>
+          </a>
         {% endif %}
 
         <div class="portfolio-item--details">
-          <h5>{{ item.name }}</h5>
+          <a href="{{ img | replace: 'thumbs/', '' | relative_url }}" 
+             data-lightbox="{{ item.picture | relative_url }}" 
+             class="text-dark h5"
+          >
+            {{ item.name }}
+          </a>
           <p class="portfolio-item--desc">{{ item.desc }}</p>
         </div>
       </div>
