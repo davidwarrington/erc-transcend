@@ -52,7 +52,7 @@ layout: default
         {% assign col_size = 12 %}
       {% endunless %}
 
-      <div class="col-{{ col_size }} text-center pb-4">
+      <div class="col-12 col-md-{{ col_size }} text-center pb-4">
         {% if item.yt %}
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src='https://www.youtube.com/embed/{{ item.yt }}' allowfullscreen></iframe>
