@@ -7589,6 +7589,11 @@ img[src="#"] {
   padding-top: 35px;
   padding-bottom: 55px; }
 
+.portfolio-item--picture:before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; }
+
 .site-intro {
   height: 100vh;
   position: fixed;

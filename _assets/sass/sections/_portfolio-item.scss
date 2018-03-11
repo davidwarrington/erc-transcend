@@ -3,6 +3,10 @@
     padding-bottom: 55px;
 }
 
-.portfolio-item--desc {
-    // display: none;
+.portfolio-item--picture {
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 56.25%;
+    }
 }

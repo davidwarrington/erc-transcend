@@ -62,7 +62,7 @@ layout: default
             | append: page.slug 
             | append: '/portfolio/' 
             | append: item.picture %}
-          <div class="" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
+          <div class="portfolio-item--picture" style="background: url('{{ img | relative_url }}') center top; background-size: cover;">
             <img src="{{ img | relative_url }}" alt="#" class="d-block w-100 sr-only">
           </div>
         {% endif %}
