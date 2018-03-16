@@ -1,7 +1,10 @@
 <div class="col-12 mt-3 text-center">
     <span class="h4">
-        Follow us here: 
-        <a href="{{ site.social.facebook.url }}" class="text-dark">fb</a>
-        <a href="{{ site.social.twitter.url }}" class="text-dark">tw</a>
+        Follow us here:
+        {% for link in site.social %}
+            <a href="{{ link.url }}" class="text-dark ml-1">
+              <span class="sr-only">{{ link.name }}</span>
+              <i class="{{ link.icon_code }}"></i></a>
+          {% endfor %}
     </span>
 </div>

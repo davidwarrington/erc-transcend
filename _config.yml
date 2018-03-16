@@ -25,12 +25,16 @@ twitter_username: jekyllrb
 github_username:  jekyll
 google_analytics: UA-99158765-1
 social:
-  facebook: 
-    url:      https://www.facebook.com/Transcend2018/
-    username: Transcend2018
-  twitter:
-    url:      https://twitter.com/Transcend_2018
-    username: Transcend_2018
+  -
+    name:      Twitter
+    icon_code: fab fa-twitter
+    url:       https://twitter.com/Transcend_2018
+    username:  Transcend_2018
+  - 
+    name:      Facebook
+    icon_code: fab fa-facebook
+    url:       https://www.facebook.com/Transcend2018/
+    username:  Transcend2018
 event: 
   date: 11/05/2018
   time: TBC
