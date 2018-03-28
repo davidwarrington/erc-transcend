@@ -1,15 +1,13 @@
 .about-img {
     border-radius: $border-radius;
+    // box-shadow: 0 20px 40px 0 rgba($black, .3);
     height: 100%;
     object-fit: cover;
+    object-position: right;
     width: 100%;
 }
 
 .about-desc {
-    @include media-breakpoint-up(xl) {
-        font-size: $font-size-base * 1.5;
-    }
-
     @include media-breakpoint-down(md) {
         padding-top: 1rem;
     }

@@ -1,28 +1,31 @@
-<div class="container-fluid bg-dark-grey text-light py-5" id="about">
-    <div class="row">
+<div class="about container-fluid bg-dark-grey text-light py-5" id="about">
+    <div class="container">
+        <div class="row">
 
-        <div class="col-12">
-            <h2 class="text-center">About</h2>
+            <div class="col-12">
+                <h2 class="text-center">About</h2>
+            </div>
+            
+            {% for section in page.about %}
+                {% if section.type == 'tagline' %}
+                    <div class="col-10 col-md-6 mt-3 mx-auto">
+                        <p class="text-center">{{ section.content }}</p>
+                    </div>
+                {% elsif section.type == 'image' %}
+                    <div class="col-12 col-lg-7 mt-3">
+                        {% assign img = section.img | prepend: '/assets/img/' %}
+                        <img src="{{ img | relative_url }}" alt="{{ section.alt_text }}" class="about-img">
+                    </div>
+                {% elsif section.type == 'text' %}
+                    <div class="about-desc col-12 col-lg-4 my-auto">
+                        {% for paragraph in section.paragraphs %}
+                            <p>{{ paragraph }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+
         </div>
-        
-        {% for section in page.about %}
-            {% if section.type == 'tagline' %}
-                <div class="col-10 col-md-6 mt-3 mx-auto">
-                    <p class="text-center">{{ section.content }}</p>
-                </div>
-            {% elsif section.type == 'image' %}
-                <div class="col-12 col-lg-7 mt-3">
-                    {% assign img = section.img | prepend: '/assets/img/' %}
-                    <img src="{{ img | relative_url }}" alt="{{ section.alt_text }}" class="about-img">
-                </div>
-            {% elsif section.type == 'text' %}
-                <div class="about-desc col-12 col-lg-4 my-auto">
-                    {% for paragraph in section.paragraphs %}
-                        <p>{{ paragraph }}</p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        {% endfor %}
 
     </div>
   </div>

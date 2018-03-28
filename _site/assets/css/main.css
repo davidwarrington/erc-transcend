@@ -7907,11 +7907,9 @@ img[src="#"] {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: right;
+     object-position: right;
   width: 100%; }
-
-@media (min-width: 1200px) {
-  .about-desc {
-    font-size: 1.5rem; } }
 
 @media (max-width: 991.98px) {
   .about-desc {
