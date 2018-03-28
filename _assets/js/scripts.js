@@ -14,4 +14,8 @@ $(document).ready(function () {
         });
     }
 
+    lightbox.option({
+        showImageNumberLabel: false
+    })
+
 });

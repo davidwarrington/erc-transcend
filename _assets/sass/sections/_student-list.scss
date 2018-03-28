@@ -28,7 +28,7 @@
 
         @include media-breakpoint-up(md) {
             &:before {
-                background: rgba(#1b1b1b, 0);
+                background: rgba($dark-grey, 0);
                 content: '';
                 position: absolute;
                 height: 100%;
@@ -53,7 +53,7 @@
                 background-size: auto 110%;
 
                 &:before {
-                    background: rgba(#1b1b1b, 0.85);
+                    background: rgba($dark-grey, 0.85);
                 }
 
                 .student-info--content {

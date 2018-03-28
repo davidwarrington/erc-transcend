@@ -34,7 +34,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
 /**
  * Wait for Jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'scripts', 'images', 'downloads', 'jekyll-build'], () => {
+gulp.task('browser-sync', ['sass', 'scripts', 'lb-images', 'images', 'downloads', 'jekyll-build'], () => {
   browser_sync({
       server: {
           baseDir: '_site'
@@ -83,10 +83,23 @@ gulp.task('scripts', () => {
  * Move images
  */
 gulp.task('images', () => {
-  return gulp.src('./_assets/img/**/*')
+  return gulp.src([
+               config.npm_dir + '/lightbox2/dist/images/*',
+               './_assets/img/**/*'
+             ])
              .pipe(gulp.dest('./_site/assets/img'))
              .pipe(browser_sync.stream())
              .pipe(gulp.dest('./assets/img'));
+});
+
+/**
+ * Move Lightbox2 images
+ */
+gulp.task('lb-images', () => {
+  return gulp.src(config.npm_dir + '/lightbox2/dist/images/*')
+             .pipe(gulp.dest('./_site/assets/images'))
+             .pipe(browser_sync.stream())
+             .pipe(gulp.dest('./assets/images'));
 });
 
 /**

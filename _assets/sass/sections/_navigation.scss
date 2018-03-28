@@ -1,13 +1,54 @@
+.dropdown {
+    position: static;
+}
+
 .navbar--dropdown {
+    border: 0;
     border-radius: 0;
+    left: 0;
+    margin-top: -1px !important;
+    position: absolute;
+    text-align: center;
+    width: 100vw;
 
     @include media-breakpoint-down(md) {
+        background: transparent;
         border: 0;
-        margin-left: -16px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
         width: 100vw;
-    }   
+    }
+
+    a {
+        &:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+
+        @include media-breakpoint-down(md) {
+            display: block;
+            padding-bottom: .5rem;
+            padding-top: .5rem;
+        }
+    }
 }
 
 .brandbar {
     margin: 0;
+}
+
+.navbar {
+    @include media-breakpoint-down(md) {
+        padding-bottom: 0;
+    }
+}
+
+.navbar-collapse {
+    @include media-breakpoint-down(md) {
+        margin-left: -1rem;
+        padding-left: 1rem;
+        margin-right: -1rem;
+        padding-right: 1rem;
+        margin-top: .5rem;
+    }
 }
