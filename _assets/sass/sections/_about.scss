@@ -1,0 +1,16 @@
+.about-img {
+    border-radius: $border-radius;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.about-desc {
+    @include media-breakpoint-up(xl) {
+        font-size: $font-size-base * 1.5;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding-top: 1rem;
+    }
+}

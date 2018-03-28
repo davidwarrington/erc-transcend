@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container-fluid bg-dark-grey text-light py-5" id="about">
     <div class="row">
 
         <div class="col-12">
@@ -11,12 +11,12 @@
                     <p class="text-center">{{ section.content }}</p>
                 </div>
             {% elsif section.type == 'image' %}
-                <div class="col-12 mt-3">
+                <div class="col-12 col-lg-7 mt-3">
                     {% assign img = section.img | prepend: '/assets/img/' %}
-                    <img src="{{ img | relative_url }}" alt="{{ section.alt_text }}" class="d-block w-100">
+                    <img src="{{ img | relative_url }}" alt="{{ section.alt_text }}" class="about-img">
                 </div>
             {% elsif section.type == 'text' %}
-                <div class="col-10 mt-3 mx-auto">
+                <div class="about-desc col-12 col-lg-4 my-auto">
                     {% for paragraph in section.paragraphs %}
                         <p>{{ paragraph }}</p>
                     {% endfor %}

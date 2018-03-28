@@ -37,14 +37,9 @@
     margin: 0;
 }
 
-.navbar {
-    @include media-breakpoint-down(md) {
-        padding-bottom: 0;
-    }
-}
-
 .navbar-collapse {
     @include media-breakpoint-down(md) {
+        margin-bottom: -.5rem;
         margin-left: -1rem;
         padding-left: 1rem;
         margin-right: -1rem;

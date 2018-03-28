@@ -7901,6 +7901,22 @@ h1 .h-xl {
 img[src="#"] {
   border: 1px solid black; }
 
+.about-img {
+  -webkit-border-radius: 0.25rem;
+          border-radius: 0.25rem;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%; }
+
+@media (min-width: 1200px) {
+  .about-desc {
+    font-size: 1.5rem; } }
+
+@media (max-width: 991.98px) {
+  .about-desc {
+    padding-top: 1rem; } }
+
 .dropdown {
   position: static; }
 
@@ -7940,11 +7956,8 @@ img[src="#"] {
   margin: 0; }
 
 @media (max-width: 991.98px) {
-  .navbar {
-    padding-bottom: 0; } }
-
-@media (max-width: 991.98px) {
   .navbar-collapse {
+    margin-bottom: -.5rem;
     margin-left: -1rem;
     padding-left: 1rem;
     margin-right: -1rem;
@@ -7992,6 +8005,7 @@ img[src="#"] {
   @media (max-width: 767.98px) {
     .student-list {
       height: auto;
+      padding-bottom: 1rem;
       width: 90%; } }
   .student-list--student {
     -webkit-box-flex: 1;

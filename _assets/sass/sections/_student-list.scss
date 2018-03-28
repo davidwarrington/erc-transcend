@@ -5,6 +5,7 @@
 
     @include media-breakpoint-down(sm) {
         height: auto;
+        padding-bottom: 1rem;
         width: 90%;
     }
 
