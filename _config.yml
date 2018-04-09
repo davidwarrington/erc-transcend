@@ -24,6 +24,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 google_analytics: UA-99158765-1
+ticket_link: https://www.eventbrite.co.uk/e/transcend-media-conference-2018-tickets-44186541134?aff=eac2
 social:
   -
     name:      Twitter
