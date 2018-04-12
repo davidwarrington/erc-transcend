@@ -9,11 +9,14 @@ h1, h2 {
     }
 }
 
-h1 .h-xl {
-    font-size: $font-size-base * 5;
+h1 {
+    .h-xl {
+        font-family: 'Didact Gothic', sans-serif;
+        font-size: $font-size-base * 5;
 
-    @include media-breakpoint-down(sm) {
-        font-size: $font-size-base * 1.5;
+        @include media-breakpoint-down(sm) {
+            font-size: $font-size-base * 1.5;
+        }
     }
 }
 
